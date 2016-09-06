@@ -1,0 +1,74 @@
+- pill: shield
+  title: "Base Shield Config"
+  subnav:
+  - pill: domain_static
+    title: "Domain Discovery: Static"
+
+  - pill: domain_s3
+    title: "Domain Discovery: S3"
+
+  - pill: domain_custom
+    title: "Domain Discovery: Custom"
+
+- pill: domains
+  title: "Domain Config"
+  subnav:
+  - pill: upstream_static
+    title: "Upstream Discovery: Static"
+
+  - pill: upstream_s3
+    title: "Upstream Discovery: S3"
+
+  - pill: upstream_custom
+    title: "Upstream Discovery: Custom"
+
+- pill: upstream
+  title: "Upstream Services"
+
+- pill: middleware
+  title: "Middleware Config"
+  subnav:
+  - pill: auth_api_key
+    title: "Auth: API Key"
+
+  - pill: rate_limit
+    title: "Rate Limiting"
+
+  - pill: cache
+    title: "Response Caching"
+
+  - pill: custom
+    title: "Custom Middleware"
+
+- pill: listeners
+  title: "Listener Config"
+  subnav:
+  - pill: log_console
+    title: "Logging: Console"
+
+  - pill: log_fluentd
+    title: "Logging: Fluentd"
+
+  - pill: log_kibana
+    title: "Logging: Elastic"
+
+  - pill: diff
+    title: "Upstream Diff"
+
+  - pill: custom
+    title: "Custom Listener"
+
+- pill: kvstores
+  title: "Key-Value Store Config"
+  subnav:
+  - pill: memory
+    title: "In-memory KVStore"
+
+  - pill: redis
+    title: "Redis KVStore"
+
+  - pill: breaker
+    title: "Circuit Breaker Wrapper"
+
+- pill: swagger
+  title: "Swagger Vendor Extensions"

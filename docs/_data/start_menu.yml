@@ -1,0 +1,77 @@
+- pill: overview
+  title: "What Is Shield"
+
+- pill: lifecycle
+  title: "Request Lifecycle"
+  subnav:
+  - pill: endpoint_sorting
+    title: "Endpoint Specificity"
+
+  - pill: local_endpoints
+    title: "Shield Endpoints"
+
+- pill: upstream
+  title: "Upstream Lifecycle"
+
+- pill: setup
+  title: "Setup"
+
+- pill: examples
+  title: "Example Configs"
+  subnav:
+  - pill: single_static
+    title: "Single Static HTTPS Upstream"
+
+  - pill: multiple_static
+    title: "Multiple Static HTTPS Upstreams"
+
+  - pill: dynamic
+    title: "Dynamic Upstreams"
+
+  - pill: blue_green
+    title: "Blue/Green Deployments"
+
+  - pill: middleware
+    title: "Adding Middleware"
+
+  - pill: stateful_middleware
+    title: "Stateful Middleware"
+
+  - pill: listener
+    title: "Adding Listeners"
+
+  - pill: domains
+    title: "Multiple Domains"
+
+- pill: alternatives
+  title: "Shield vs ..."
+  subnav:
+  - pill: api_gateway
+    title: "API Gateway"
+
+  - pill: api_umbrella
+    title: "API Umbrella"
+
+  - pill: haproxy
+    title: "HAProxy"
+
+  - pill: kong
+    title: "Kong"
+
+  - pill: nginx
+    title: "Nginx"
+
+  - pill: squid
+    title: "Squid"
+
+  - pill: traefik
+    title: "Traefik"
+
+  - pill: tyk
+    title: "Tyk"
+
+  - pill: vulcand
+    title: VulcanD
+
+- pill: faq
+  title: FAQ

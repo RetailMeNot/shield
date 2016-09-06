@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ site.title }}: {{ page.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/stylesheets/main.css" media="screen">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/favicon.ico" />
+    <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/images/favicon.png">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="{{ site.baseurl }}/" class="navbar-brand">
+                <img src="{{ site.baseurl }}/assets/images/shield_initial_7.png" style="display: inline;">
+                <strong class="text-success">Shield</strong> by RetailMeNot
+            </a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav navbar-right">
+                <li{% if page.activeTab == 'start' %} class="active"{% endif %}>
+                    <a href="{{ site.baseurl }}/start/overview">Start</a>
+                </li>
+                <li {% if page.activeTab == 'docs' %}class="dropdown active"{% else %}class="dropdown"{% endif %}>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Docs <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ site.baseurl }}/docs/0.2">v0.2 - Current</a></li>
+                    </ul>
+                </li>
+                {% assign sorted = site.releases | sort: 'order' | reverse %}
+                {% assign latest = sorted[0] %}
+                <li{% if page.activeTab == 'releases' %} class="active"{% endif %}>
+                    <a href="{{ site.baseurl }}{{ latest.url }}">Releases</a>
+                </li>
+                <li{% if page.activeTab == 'contributing' %} class="active"{% endif %}>
+                    <a href="{{ site.baseurl }}/contributing">Contributing</a>
+                </li>
+                <li>
+                    <a href="https://github.com/RetailMeNot/Hound" target="_blank">
+                        <img src="{{ site.baseurl }}/assets/images/github_inv_mark.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

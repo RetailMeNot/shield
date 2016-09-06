@@ -1,0 +1,12 @@
+{% include header.html %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-push-3 col-sm-9">
+      {{content}}
+    </div>
+    {% include navColumn.html tabList=site.data.docs.menu_0_2 activePill=page.activePill activeSubPill=page.activeSubPill subpath="/docs/0.2/" title="Config Topic" %}
+  </div>
+</div>
+
+{% include footer.html %}

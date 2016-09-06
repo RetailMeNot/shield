@@ -1,0 +1,14 @@
+option java_package = "shield.proxying.protobuf";
+option java_outer_classname = "HttpResponseProtos";
+
+message ProtoResponse {
+    required int32 status = 1;
+    required bytes data = 2;
+
+    message ProtoHeader {
+        required string name = 1;
+        required string value = 2;
+    }
+
+    repeated ProtoHeader headers = 3;
+}

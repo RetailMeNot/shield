@@ -1,0 +1,24 @@
+<div class="col-sm-pull-9 col-sm-3">
+    <h4 class="sub-nav-header">{{ include.title }}</h4>
+    <ul class="nav nav-pills nav-stacked">
+        {% for tab in include.tabList %}
+        <li {% if include.activePill == tab.pill %} class="active" {% endif %}>
+            <a href="{{ site.baseurl }}{{ include.subpath }}{{ tab.pill }}">
+                {% if tab.subnav != nil and include.activePill == tab.pill %}
+                <span class="pull-right glyphicon glyphicon-triangle-bottom"></span>
+                {% endif %}
+                {{ tab.title }}
+            </a>
+            {% if tab.subnav != nil and include.activePill == tab.pill %}
+            <ul class="nav nav-pills nav-stacked">
+                {% for subtab in tab.subnav %}
+                <li {% if include.activeSubPill == subtab.pill %} class="active" {% endif %}>
+                    <a href="{{ site.baseurl }}{{ include.subpath }}{{ tab.pill }}/{{ subtab.pill }}">{{ subtab.title }} </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>

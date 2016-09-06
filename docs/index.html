@@ -1,0 +1,176 @@
+---
+layout: raw
+title: The HTTP Engine
+---
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-md-9">
+                <h1>
+                    Shield
+                    <span class="text-muted">The HTTP Engine</span>
+                </h1>
+                <p>
+                    Shield is a service that you can deploy which aims to be "Production Readiness in a Box" for your
+                    service oriented architecture.
+                </p>
+                <p>
+                    Instead of re-implementing common problems like authentication, rate-limiting, and caching in each
+                    backend service, Shield groups these concerns into a single convenient, reusable location.
+                </p>
+                <p>
+                    {% assign sorted = site.releases | sort: 'order' | reverse %}
+                    {% assign latest = sorted[0] %}
+                    <a class="btn btn-success" href="{{ site.baseurl }}{{ latest.url }}">
+                        {{ latest.title }}
+                        <span class="glyphicon glyphicon-cloud-download"></span>
+                    </a>
+                    <a class="btn btn-default" href="{{ site.baseurl }}/start/overview">
+                        Get Started <span class="glyphicon glyphicon-menu-right"></span>
+                    </a>
+                </p>
+            </div>
+            <div class="col-sm-5 col-md-3 hidden-xs">
+                <img src="{{ site.baseurl }}/assets/images/shield_logo_6.png" style="max-width: 350px; max-height:350px;">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1>Feature Overview</h1>
+    <p class="lead">
+        Shield sits between your precious microservices and the raging masses of the internet. A single Shield instance
+        can handle multiple domains, a fleet of backend services, and thousands of requests per second with only a few
+        milliseconds of overhead.
+    </p>
+    <img class="img-responsive center-block featurette-image" src="{{ site.baseurl }}/assets/images/shield_layout.png" alt="Shield Layout" height="250" width="735">
+    <p class="lead">
+        Shield's dynamic configuration system allows you to add, alter, and remove domains, middleware, and upstream
+        microservices smoothly without dropping a single request.
+    </p>
+
+    <hr class="featurette-divider">
+
+    <div class="text-center">
+        <h2>Service Discovery</h2>
+    </div>
+    <div class="row featurette">
+        <div class="col-md-4">
+            <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/images/service_discovery.png" alt="Service Discovery" height="140" width="147">
+            <h3>Find Upstream Services</h3>
+            <p>
+                Use your preferred service discovery tool for telling Shield about your upstream microservices.  Shield
+                has several already implemented, but it's easy to create your own.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <img class="img-circle img-responsive center-block" src="{{ site.baseurl }}/assets/images/swagger-logo.png" alt="Swagger" height="140" width="140">
+            <h3>Discover Their Endpoints</h3>
+            <p>
+                Shield uses the <a href="http://swagger.io/">Swagger Documentation</a> of your upstream microservices to
+                dynamically build it's routing table.  No duplicate config needed.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/images/routing.png" alt="Request Routing" height="140" width="179">
+            <h3>Route Your Request</h3>
+            <p>
+                Incoming HTTP requests are routed to the upstream microservice that is best able to handle it.  If
+                multiple instances fit the bill, Shield will load balance the requests between them.
+            </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-push-5 col-md-7">
+            <h1><span class="text-muted">Transform and Handle Your Request With</span> Middleware and Listeners</h1>
+            <p>
+                Common HTTP problems like rate limiting, caching, and authentication can be solved with middleware.
+                Timeouts ensure that requests get serviced in a timely manner.
+            </p>
+            <p>
+                Listeners are like middleware, but act upon the request/response pair once the request has completed.
+                They are perfect for logging, metrics, and analysis.
+            </p>
+        </div>
+        <div class="col-md-pull-7 col-md-5">
+            <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/images/middleware.png" alt="Middleware">
+        </div>
+    </div>
+    
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h1><span class="text-muted">Choose Your</span> Transport Method</h1>
+            <p>
+                Shield's front end listens and responds in the lingua franca of the internet, HTTP.  When talking with
+                your microservice backends, Shield can easily translate to a different transport mechanism: HTTP, AWS Lambda,
+                or your RPC or binary format of choice.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/images/transports.png" alt="Transport methods">
+        </div>
+    </div>
+    
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-push-5 col-md-7">
+            <h1><span class="text-muted">Enables Smooth</span> Blue/Green Deployments <span class="text-muted">For Your Backends</span></h1>
+            <p>
+                Shield's dynamic weighted load balancing lets you deploy a new version your upstream microservice and
+                gradually transition traffic away from the old deployment.  An elegant solution for a more civilized age,
+                compared to suddenly dumping traffic on a new deployment.
+            </p>
+        </div>
+        <div class="col-md-pull-7 col-md-5">
+            <img class="img-responsive" src="{{ site.baseurl }}/assets/images/blue_green_deployment.png" alt="Blue Green Deployments">
+        </div>
+    </div>
+    
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h1><span class="text-muted">Built On Top Of Some</span> Serious Tech</h1>
+            <p>
+                Shield is built from the ground up to be fast and reliable.  It relies on Spray for blazing fast HTTP
+                handling and on Akka's "Let it Crash" actor paradigm for fault tolerance.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-6">
+                    <a href="http://spray.io/"><img class="img-responsive center-block featurette-logo" src="{{ site.baseurl }}/assets/images/spray_logo.png" alt="Spray Logo"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-6 col-md-6">
+                    <a href="http://akka.io/"><img class="img-responsive center-block featurette-logo" src="{{ site.baseurl }}/assets/images/akka_logo.png" alt="Akka Logo"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="http://www.scala-lang.org/"><img class="img-responsive center-block featurette-logo" src="{{ site.baseurl }}/assets/images/scala_logo.png" alt="Scala Logo"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h1>Get Started Now</h1>
+            <p>
+                Dive into how you can use Shield with our <a href="{{ site.baseurl }}/start/overview/">Getting Started Guide</a>
+            </p>
+            <a class="btn btn-success btn-lg" href="{{ site.baseurl}}/start/overview/"><span class="glyphicon glyphicon-arrow-right"></span> Get Started</a>
+        </div>
+    </div>
+
+</div>

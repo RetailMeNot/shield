@@ -1,0 +1,6 @@
+target/
+.idea/
+*.iml
+.vagrant/
+.env/
+application.conf
