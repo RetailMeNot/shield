@@ -1,6 +1,6 @@
 FROM java:8
 
-MAINTAINER RetailMeNot
+MAINTAINER Shield Project
 
 ARG artifact_version=0.3
 

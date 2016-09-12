@@ -1,6 +1,6 @@
 FROM java:8
 
-MAINTAINER RetailMeNot
+MAINTAINER Shield Project
 
 RUN apt-get update && \
     apt-get -y install \

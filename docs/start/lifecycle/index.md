@@ -43,7 +43,7 @@ the extension.
 The Request Processor runs the request through the domain's Routing Table to determine which upstream services are capable
 of handling it.
 
-* Find the [most specific endpoint]({{ site.baseurl }}/start/endpoint_sorting) endpoint that matches the path of the
+* Find the [most specific endpoint]({{ site.baseurl }}/start/lifecycle/endpoint_sorting) that matches the path of the
 request (Ignores trailing slash)
     * If no match is found, the router returns a `404 Not Found` response
 * Filters possible upstreams by whether or not the support the HTTP Method of the request.
@@ -62,12 +62,9 @@ request (Ignores trailing slash)
       specify what they can produce
     * If no match is found, the router returns a `406 Not Acceptable` header.
 
-There are a few endpoints that Shield implements locally that will return a response.  The path can be changed via config,
- but they will take precedence over any upstream that declares the same endpoint.
-
-* `GET /healthcheck`
-* `GET /metrics`
-* `GET /spec`
+There are a few endpoints that [Shield implements locally]({{ site.baseurl }}/start/lifecycle/local_endpoints) that will
+return a response.  The path can be changed via config, but they will take precedence over any upstream that declares 
+the same endpoint.
 
 If the Routing Table returned a response, that response is immediately forwarded to the client.  Otherwise, the Request
 Processor continues on to the next step.

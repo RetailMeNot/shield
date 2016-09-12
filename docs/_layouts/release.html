@@ -3,7 +3,34 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-push-3 col-sm-9">
+            <h1>Shield {{ page.title }}</h1>
+            {% if page.download_url != nil %}
+            <h3>Download</h3>
+            <p>
+                Grab the release from <a href="{{ page.download_url }}" target="_blank">GitHub <span class="glyphicon glyphicon-download-alt"></span></a>
+            </p>
+            {% endif %}
+
+            <h3>Description</h3>
             {{content}}
+
+            {% if page.changes != nil %}
+            <h3>Contributions</h3>
+
+            <ul>
+            {% for change in page.changes %}
+              <li>
+                  {% if change.pr != nil %}
+                  <a href="https://github.com/RetailMeNot/shield/pull/{{ change.pr }}">[PR #{{ change.pr }}]</a>
+                  {% endif %}
+                  {{ change.description }}
+                  {% if change.author != nil %}
+                  ({{ change.author }})
+                  {% endif %}
+              </li>
+            {% endfor %}
+            </ul>
+            {% endif %}
         </div>
 
         {% assign sorted = site.releases | sort: 'order' | reverse %}

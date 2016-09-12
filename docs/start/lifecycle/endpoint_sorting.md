@@ -35,6 +35,6 @@ From most specific to least specific.
 * [Reserved Segment](https://tools.ietf.org/html/rfc6570#section-3.2.3): `{+identifier}`
 
 If the number segments between two endpoints is different but the overlapping segments have the same specificity,
-preference is given to the endpoint with more segments.
+the endpoint with more segments is considered to be more specific.
 
 If they are still an exact match, Shield compares them by raw string values.

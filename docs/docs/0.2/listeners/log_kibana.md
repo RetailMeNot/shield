@@ -95,3 +95,9 @@ A helper script is provided at `scripts/kibana_index_mapping.sh` for setting up 
   "overall_time": 24
 }
 {% endhighlight %}
+
+### Authentication
+
+If the `AWSSigning` configuration is present and active, Shield uses the AWS Java SDK for signing the request to 
+ElasticSearch.  See the documentation on how to set up Shield with
+[AWS Credentials](http://docs.aws.amazon.com/java-sdk/latest/developer-guide/credentials.html).
