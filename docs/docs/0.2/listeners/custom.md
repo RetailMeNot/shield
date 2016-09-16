@@ -46,7 +46,7 @@ trait ListenerBuilder extends Actor {
 {% endhighlight %}
 
 To register the listener with Shield, the builder actor must send a `shield.actors.config.ConfigWatcherMsgs.ListenerUpdated`
-message to it's parent actor.  It can do this multiple times if it wants to change actors used by Shield.  If you're swapping
+message to its parent actor.  It can do this multiple times if it wants to change actors used by Shield.  If you're swapping
 actors, you should wait for Spray's global request timeout to elapse before killing the old listener actor, to allow any
 in flight requests to be drained.
 

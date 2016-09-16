@@ -31,7 +31,7 @@ trait UpstreamWatcher { self: Actor =>
 {% endhighlight %}
 
 To send an updated list of upstream services to Shield, the actor must send a `shield.actors.config.UpstreamAggregatorMsgs.DiscoveredUpstreams`
-message to it's parent actor.
+message to its parent actor.
 
 
 {% highlight scala %}

@@ -8,7 +8,7 @@ activeSubPill: dynamic
 # Dynamic Upstreams
 
 Here we change the "upstream-watcher" setting to watch a file hosted in AWS S3.  When this file is updated, Shield will
-add and remove upstreams as needed, updating it's internal routing table with the Swagger Documentation pulled from each
+add and remove upstreams as needed, updating its internal routing table with the Swagger Documentation pulled from each
 service.
 
 ### application.conf
