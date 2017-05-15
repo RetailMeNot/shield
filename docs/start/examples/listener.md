@@ -8,7 +8,7 @@ activeSubPill: listener
 # Adding Listeners
 
 In the [Stateful Middleware]({{ site.baseurl }}/start/examples/stateful_middleware) example, we set up Shield to start
-doing some heavy lifting.  However, its hard to appreciate our work if we can't keep track of what Shield has done.
+doing some heavy lifting.  However, it's hard to appreciate our work if we can't keep track of what Shield has done.
 
 To fix that, let's add a listener that write request/response log information to stdout.  We've also updated Shield's
 logger to capture the `User-Agent` header of the request so we can see what devices use our site.

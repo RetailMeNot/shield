@@ -17,7 +17,7 @@ below, you must explicitly configure each endpoint (if the project handles routi
   <div class="panel-heading">Correctness of Comparisons</div>
   <div class="panel-body">
     <p>
-        We try to be objective as possible in these comparisons.  However, its possible that we missed some features in 
+        We try to be objective as possible in these comparisons.  However, it's possible that we missed some features in 
         our research or that the project has been updated in the mean time.  
     </p>
     <p>

@@ -55,7 +55,7 @@ To set the version number of the project at build/packaging/run time, do the fol
 Shield relies on the [SBT Native Packager](https://github.com/sbt/sbt-native-packager) plugin to create a release 
 package.  To create the release, run:
 
-   sbt clean test universal:packageBin
+    sbt clean test universal:packageBin
 
 ## Documentation
 All documentation should be in either this readme.md or in the /docs folder.  For instructions on how to view the docs site

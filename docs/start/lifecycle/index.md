@@ -61,6 +61,8 @@ request (Ignores trailing slash)
     * If the request does not include an `Accept` header, the router filters possible upstreams to those that do not
       specify what they can produce
     * If no match is found, the router returns a `406 Not Acceptable` header.
+    * If multiple matches are found, Shield will choose the best type according to the [Quality Values](
+      https://tools.ietf.org/html/rfc7231#section-5.3.1) sent by the client.
 
 There are a few endpoints that [Shield implements locally]({{ site.baseurl }}/start/lifecycle/local_endpoints) that will
 return a response.  The path can be changed via config, but they will take precedence over any upstream that declares 
