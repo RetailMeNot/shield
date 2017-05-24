@@ -31,7 +31,7 @@ trait DomainWatcher extends Actor {
 {% endhighlight %}
 
 To send an updated list of domains to Shield, the actor must send a `shield.actors.ShieldActorMsgs.DomainsUpdated`
-message to it's parent actor.
+message to its parent actor.
 
 
 {% highlight scala %}

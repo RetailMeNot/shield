@@ -29,16 +29,16 @@ An Upstream Service Object has the following schema:
   // The current weight of the service for load balancing.
   // Optional:  If not present, the service is given the weight of 1
   //
-  // When a service is added, it is immediately set to it's initial weight.
+  // When a service is added, it is immediately set to its initial weight.
   //
-  // When a service is removed, it's weight is immediately set to 0 and starts to drain
+  // When a service is removed, its weight is immediately set to 0 and starts to drain
   // any still in-flight requests.
   //
   // If the weight is modified after Shield has already been made aware of the service,
-  // the weight will modified linearly from it's original value to it's updated value
+  // the weight will modified linearly from its original value to it' updated value
   // according to the "upstream-weighting" configuration on the domain.
   // Modifying the "weight" value here while this transition is in process will reset
-  // the transition to start from it's previous "in-progress" weight to the newly set value.
+  // the transition to start from its previous "in-progress" weight to the newly set value.
   //
   // Shield will still send traffic to services with "weight: 0" if no other upstream services
   // are capable of handling the request
@@ -51,20 +51,20 @@ An Upstream Service Object has the following schema:
 
 **Config Value**: `swagger1`
 
-The upstream service exposes it's documentation using the Swagger 1 format.  The `serviceLocation` setting must be
+The upstream service exposes its documentation using the Swagger 1 format.  The `serviceLocation` setting must be
 an `HTTP` or `HTTPS` URI with no auth, path, query, or fragment.  Communication with the service is done via either HTTP
 or HTTPS, as indicated by the protocol in the `serviceLocation`.
 
 
 **Config Value**: `swagger2`
 
-The upstream service exposes it's documentation using the Swagger 2 format.  The `serviceLocation` setting must be
+The upstream service exposes its documentation using the Swagger 2 format.  The `serviceLocation` setting must be
 an `HTTP` or `HTTPS` URI with no auth, path, query, or fragment.  Communication with the service is done via either HTTP
 or HTTPS, as indicated by the protocol in the `serviceLocation`.
 
 **Config Value**: `lambda`
 
-The upstream service exposes it's documentation using the Swagger 2 format.  The `serviceLocation` setting must be
+The upstream service exposes its documentation using the Swagger 2 format.  The `serviceLocation` setting must be
 the `ARN` of the lambda function to invoke.
 
 Requests are sent to the upstream service as a JSON object, formatted as follows:

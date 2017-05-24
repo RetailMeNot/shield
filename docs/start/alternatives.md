@@ -10,7 +10,7 @@ Shield fits into a category of software called an API Gateway.  There are severa
 alternative implementations, so let's talk about how they're different.
 
 One feature that none of these alternatives appear to have is the concept of Endpoint Discovery:  Shield will 
-discover what endpoints an upstream service has and automatically build it's routing table accordingly.  In the projects
+discover what endpoints an upstream service has and automatically build its routing table accordingly.  In the projects
 below, you must explicitly configure each endpoint (if the project handles routing between services at all).
 
 <div class="panel panel-info">

@@ -17,7 +17,7 @@ that represents all of the combined upstream endpoints.
 ### Metrics Endpoint
 
 When a request comes in for `GET /metrics` (the path can be changed via config), Shield will return a JSON object with
-metrics on it's performance.
+metrics on its performance.
 
 ### Healthcheck Endpoint
 

@@ -28,10 +28,10 @@ shield {
   port: 8080
 
   paths {
-    // The path that Shield uses for it's healthcheck endpoint
+    // The path that Shield uses for its healthcheck endpoint
     healthcheck: "/healthcheck"
 
-    // The path that Shield uses for it's healthcheck endpoint
+    // The path that Shield uses for its healthcheck endpoint
     metrics: "/metrics"
 
     // The path that Shield uses when retrieving Swagger1 Documentation from an

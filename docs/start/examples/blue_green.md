@@ -11,8 +11,8 @@ This is effectively the same configuration as our [Dynamic Upstreams]({{ site.ba
 The only difference is that api-blue.example.com and api-green.example.com have the same service deployed to them.  Shield
 will load balance requests across the two upstreams according to their weight.
 
-Editing the weight in `shield_upstreams.conf` will prompt Shield to smoothly transition their weight from it's current
-value to it's new target value (NB: The weights do not need to sum to 100).
+Editing the weight in `shield_upstreams.conf` will prompt Shield to smoothly transition their weight from its current
+value to its new target value (NB: The weights do not need to sum to 100).
 
 ### application.conf
 
