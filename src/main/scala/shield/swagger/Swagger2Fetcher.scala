@@ -70,7 +70,7 @@ class Swagger2Fetcher(docPath: String, pipeline: SendReceive)(implicit executor:
     op.getParameters.asScala.map { param =>
       param.getIn.toLowerCase match {
         case "body" => BodyParam(param.getName)
-        case "formData" => FormParam(param.getName)
+        case "formdata" => FormParam(param.getName)
         case "header" => HeaderParam(param.getName.toLowerCase)
         case "path" => PathParam(param.getName)
         case "query" => QueryParam(param.getName)
